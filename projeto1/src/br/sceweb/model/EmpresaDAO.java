@@ -7,14 +7,29 @@ import com.mysql.jdbc.PreparedStatement;
 import br.sceweb.servico.ConfiguraDB;
 import br.sceweb.servico.FabricaDeConexoes;
 
+/**
+ * Esta classe registra informações das empresas que podem oferecer estagio 
+ * @author Lab103
+ * @version 1.0
+ *
+ */
+
 public class EmpresaDAO {
 	
 	ConfiguraDB configuraDB;
-	
+	/**
+	 * configura EmpresaDAO com a classe ConfiguraDB
+	 * @param db
+	 */
 	public EmpresaDAO (ConfiguraDB db){
 		this.configuraDB = db;
 	}
 	
+	/**
+	 * Este metodo adicionada novas empresas
+	 * @param empresa
+	 * @return alguma coisa
+	 */
 	public int adiciona(Empresa empresa){
 		PreparedStatement ps;
 		int codigoRetorno=0;
@@ -43,7 +58,7 @@ public class EmpresaDAO {
 	public int exclui (String cnpj) {
 		java.sql.PreparedStatement ps;
 		int codigoretorno = 0;
-		try (Connection conn = new FabricaDeConexoes().getConnection()) {
+		try (Connection conn = new FabricaDeConexoes(configuraDB).getConnection()) {
 			ps= conn.prepareStatement ("delete from empresa where cnpj = ?");
 			ps.setString(1, cnpj);
 			codigoretorno = ps.executeUpdate();

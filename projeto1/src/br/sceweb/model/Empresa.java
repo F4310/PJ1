@@ -14,12 +14,21 @@ public class Empresa {
 	String nomeFantasia;
 	String endereco;
 	String telefone;
-
+	
+	/**
+	 * Este metodo pega o valor cnpj e retorna
+	 * @return cnpj
+	 */
 	public String getCnpj() {
+		
 		return cnpj;
 	}
 	
-	
+	/**
+	 * Este metodo recebe do usuario o cnpj
+	 * @param cnpj
+	 * @return msg
+	 */
 	public String setCnpj(String cnpj) {
 		String msg="";
 		if(isValido(cnpj)){
@@ -29,40 +38,75 @@ public class Empresa {
 		}
 		return msg;
 	}
-
+	
+	/**
+	 * Este metodo pega o valor do nome da empresa
+	 * @return nomeDaEmpresa
+	 */
 	public String getNomeDaEmpresa() {
 		return nomeDaEmpresa;
 	}
 
+	/**
+	 * Este metodo seta o nome da empresa
+	 * @param nomeDaEmpresa
+	 */
 	public void setNomeDaEmpresa(String nomeDaEmpresa) {
 		this.nomeDaEmpresa = nomeDaEmpresa;
 	}
 
+	/**
+	 * Este metodo pega o valor nome fantasia da empresa
+	 * @return nomeFantasia
+	 */
 	public String getNomeFantasia() {
 		return nomeFantasia;
 	}
-
+	
+	/**
+	 * Este metodo seta o nome fantasia da empresa
+	 * @param nomeFantasia
+	 */
 	public void setNomeFantasia(String nomeFantasia) {
 		this.nomeFantasia = nomeFantasia;
 	}
 
+	/**
+	 * Este metodo pega o valor do endereço
+	 * @return endereço
+	 */
 	public String getEndereco() {
 		return endereco;
 	}
 
+	/**
+	 * Este metodo seta o valor do endereço
+	 * @param endereco
+	 */
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 
+	/**
+	 * Este metodo pega o valor do telefone
+	 * @return telefone
+	 */
 	public String getTelefone() {
 		return telefone;
 	}
 
+	/**
+	 * Este metodo seta o telefone
+	 * @param telefone
+	 */
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	/*
-	 * valida o cnpj
+	
+	/**
+	 * Este metodo valida a entrada do CNPJ
+	 * @param cnpj
+	 * @return se é valido ou não
 	 */
 	public boolean isValido(String cnpj) {
 		char dig13, dig14; 
